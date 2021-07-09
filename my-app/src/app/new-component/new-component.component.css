@@ -1,3 +1,25 @@
+#assessment{
+  margin-left: 5em;
+  width:90%;
+}
+.title {
+  color: rgb(25, 9, 248);
+}
 table {
-    width: 100%;
+    margin-top: 10px;
+    margin-left: 1em;
+    width:90%;
   }
+.row_btn {
+  position: relative; 
+  height: 50px;
+ 
+}
+.btn_assessment {
+  margin-top: 10px;
+  position: absolute;
+  right: 109px;
+} 
+.input-group {
+  margin-top: 10px;
+}

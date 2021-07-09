@@ -1,48 +1,58 @@
 
-<mat-label><h3>Danh sách hồ sơ đề nghị xét TĐKT cần thẩm định, xử lý</h3></mat-label>
-<div class="row">
-    <div class="col-md-6">
-        <mat-form-field appearance="fill">
-            <mat-label>Favorite food</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let food of foods" [value]="food.value">
-                {{food.viewValue}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-    </div>
-</div>  
-<div class="row">
+<div id = "assessment">
+  <mat-label class="title">Danh sách hồ sơ đề nghị xét TĐKT cần thẩm định, xử lý</mat-label>
+  <div class="row">
+        <mat-label class="col-md-3">Loại hình thi đua khen thưởng</mat-label>
+        <select class="col-md-3 form-control form-control-sm">
+              <option>Danh hiệu thi đua</option>
+        </select>
+        <mat-label class="col-md-2">Danh hiệu</mat-label>
+        <select class="col-md-3 form-control form-control-sm">
+              <option>Chọn danh hiệu</option>
+        </select>
+  </div>  
+  <div class="row input-group">
+       <mat-label class="col-md-3">Tìm kiếm</mat-label>
+       <input  style="margin-left: 6px;"  type="email" class="form-control col-md-3">
+       <button style="margin-left: 3px;" mat-raised-button color="primary">Tìm kiếm</button>
+  </div>
+  <div class="row row_btn">
+     <button class="btn_assessment" mat-raised-button>Thẩm định hồ sơ</button>
+  </div>
+  <div class="row">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-        <ng-container matColumnDef="position">
-          <th mat-header-cell *matHeaderCellDef><mat-checkbox></mat-checkbox></th>
-          <td mat-cell *matCellDef="let element"><mat-checkbox></mat-checkbox></td>
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef><mat-checkbox ></mat-checkbox></th>
+          <td mat-cell *matCellDef="let element"><mat-checkbox [value]="element.id"   (change)="checkCheckBoxvalue($event)"></mat-checkbox></td>
         </ng-container>
-        <ng-container matColumnDef="name">
+        <ng-container matColumnDef="ngay_nhan">
           <th mat-header-cell *matHeaderCellDef>Ngày nhận</th>
-          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.ngay_nhan}} </td>
         </ng-container>
-        <ng-container matColumnDef="weight">
+        <ng-container matColumnDef="so_to_trinh">
           <th mat-header-cell *matHeaderCellDef>Số tờ trình</th>
-          <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.so_to_trinh}} </td>
         </ng-container>
-        <ng-container matColumnDef="symbol">
+        <ng-container matColumnDef="danh_hieu">
           <th mat-header-cell *matHeaderCellDef>Danh hiệu thi đua</th>
-          <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.danh_hieu}} </td>
         </ng-container>
-        <ng-container matColumnDef="1">
+        <ng-container matColumnDef="nguoi_nop">
             <th mat-header-cell *matHeaderCellDef>Người nộp</th>
-            <td mat-cell *matCellDef="let element">  </td>
+            <td mat-cell *matCellDef="let element"> {{element.nguoi_nop}} </td>
         </ng-container>
-        <ng-container matColumnDef="2">
+        <ng-container matColumnDef="don_vi">
             <th mat-header-cell *matHeaderCellDef>Đơn vị</th>
-            <td mat-cell *matCellDef="let element">  </td>
+            <td mat-cell *matCellDef="let element"> {{element.don_vi}} </td>
         </ng-container>
-        <ng-container matColumnDef="3">
+        <ng-container matColumnDef="hanh_dong">
             <th mat-header-cell *matHeaderCellDef>#</th>
             <td mat-cell *matCellDef="let element"><a mat-button color="accent" (click)="onSave()">Link</a></td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
+  </div>
 </div>
+
+

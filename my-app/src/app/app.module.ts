@@ -11,9 +11,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule} from '@angular/material/select';
-// import {MatFormFieldModule} from '@angular/material/form-field';
+import { RouterModule } from '@angular/router';
 import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+// import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 @NgModule({
@@ -30,9 +31,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     MatCheckboxModule,
     MatSelectModule,
-    // MatFormFieldModule,
+    RouterModule.forRoot([
+      // {path: 'crisis-list', component: CrisisListComponent},
+      {path: 'test', component: NewComponentComponent},
+    ]),
     MatInputModule,
     BrowserAnimationsModule
+      // MatFormFieldModule,
    
   ],
   providers: [],

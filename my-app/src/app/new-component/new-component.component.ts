@@ -1,28 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 
 export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+  id: number;
+  ngay_nhan: string;
+  so_to_trinh: number;
+  danh_hieu: string;
+  nguoi_nop: string;
+  don_vi: string;
+  hanh_dong: number
 }
+const ELEMENT_DATA: PeriodicElement[] = [
+  {id: 1, ngay_nhan: '27/04/2021', so_to_trinh: 0.39444, danh_hieu: 'Bằng khen cấp bộ, ban nghành', nguoi_nop: 'Lê Văn Hải', don_vi: 'Sở xây dựng', hanh_dong: 1},
+  {id: 2, ngay_nhan: '21/03/2020', so_to_trinh: 1.0079, danh_hieu:  'Bằng khen cấp sở', nguoi_nop: 'Lê Văn Hải', don_vi: 'Sở xây dựng', hanh_dong: 1},
+  {id: 3, ngay_nhan: '27/04/2021', so_to_trinh: 1.0079, danh_hieu:  'Bằng khen cấp huyện', nguoi_nop: 'Lê Văn Hải', don_vi: 'Sở xây dựng', hanh_dong: 1},
+  {id: 4, ngay_nhan: '27/04/2021', so_to_trinh: 1.0079, danh_hieu:  'Bằng khen cấp xã', nguoi_nop: 'Lê Văn Hải', don_vi: 'Sở xây dựng', hanh_dong: 1},
+  
+];
 interface Food {
   value: string;
   viewValue: string;
 }
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
-
 
 @Component({
   selector: 'app-new-component',
@@ -30,7 +27,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./new-component.component.css']
 })
 export class NewComponentComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', '1', '2','3'];
+  displayedColumns: string[] = ['id', 'ngay_nhan', 'so_to_trinh', 'danh_hieu', 'nguoi_nop', 'don_vi','hanh_dong'];
   dataSource = ELEMENT_DATA;
 
   foods: Food[] = [
@@ -44,6 +41,9 @@ export class NewComponentComponent implements OnInit {
   }
   onSave() {
     alert('Show button clicked!');
+  }
+  checkCheckBoxvalue(event: any){
+    console.log(event.source.value);
   }
 
 }
