@@ -13,7 +13,13 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule} from '@angular/material/select';
 import { RouterModule } from '@angular/router';
 import {MatInputModule} from '@angular/material/input';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { WordComponent } from './word/word.component'; 
+import { ReactiveFormsModule } from '@angular/forms';
+import { TodoComponent } from './todo/todo.component';
+import { WeatherComponent } from './weather/weather.component';
+import { HttpClientModule } from '@angular/common/http';
+
 // import {MatFormFieldModule} from '@angular/material/form-field';
 
 
@@ -21,9 +27,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     NewComponentComponent,
+    WordComponent,
+    TodoComponent,
+    WeatherComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     MatButtonModule,
     MatCardModule,
@@ -36,7 +46,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       {path: 'test', component: NewComponentComponent},
     ]),
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
       // MatFormFieldModule,
    
   ],

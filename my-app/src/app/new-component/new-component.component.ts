@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MatTableDataSource} from '@angular/material/table';
 
 export interface PeriodicElement {
   id: number;
@@ -27,6 +28,7 @@ interface Food {
   styleUrls: ['./new-component.component.css']
 })
 export class NewComponentComponent implements OnInit {
+ 
   displayedColumns: string[] = ['id', 'ngay_nhan', 'so_to_trinh', 'danh_hieu', 'nguoi_nop', 'don_vi','hanh_dong'];
   dataSource = ELEMENT_DATA;
 
