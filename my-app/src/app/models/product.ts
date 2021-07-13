@@ -2,7 +2,8 @@ export class Product {
  
         id: number;
         name: string;
-        age: string;
-        address: string;
-     
+        description: string;
+        price: string;
+        imageUrl: string;
+        quantity: number;
 }
