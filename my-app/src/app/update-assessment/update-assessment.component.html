@@ -1,0 +1,39 @@
+<mat-label style="color: cornflowerblue;">Cập nhật kết quả bình xét</mat-label>
+<br>
+<mat-label style="color: rgb(100, 237, 168);">Thông tin hồ sơ </mat-label>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Ngày nhận</th>
+      <th scope="col">Số tờ trình</th>
+      <th scope="col">Danh hiệu thi đua</th>
+      <th scope="col">Người nộp</th>
+      <th scope="col">Đơn vị</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{dataServ.assessment.received_date}}</td>
+      <td>{{dataServ.assessment.number_of_reports}}</td>
+      <td>{{dataServ.assessment.emulation_title}}</td>
+      <td>{{dataServ.assessment.submitter}}</td>
+      <td>{{dataServ.assessment.unit}}</td>
+    </tr> 
+  </tbody>
+</table>
+<mat-label style="color: rgb(100, 237, 168);">Thông tin xử lý </mat-label>
+   <div class="info-process">
+              <mat-label style="margin-right: 10px;">Ngày thực hiện</mat-label>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <input matInput placeholder="Ex. Pizza" value="Sushi">
+              </mat-form-field>
+              <br>
+              <mat-label style="margin-right: 10px;">Nội dung</mat-label>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Leave a comment</mat-label>
+                <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+              </mat-form-field>
+              
+   </div>
+
+  

@@ -1,0 +1,22 @@
+<div style="padding: 13px;">
+    <mat-spinner *ngIf="products.length === 0"></mat-spinner>
+
+    <mat-card style = "width: 80%;" *ngFor="let product of products" style="margin-top:11px;">
+        <mat-card-header>
+            <mat-card-title>{{product.name}}</mat-card-title>
+            <mat-card-subtitle>{{product.price}} $/ {{product.quantity}}
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+                {{product.description}}
+            </p>
+            <img style="height:80%; width: 80%;" src="{{ product.imageUrl }}" />
+        </mat-card-content>
+        <mat-card-actions>
+      <button mat-raised-button color="accent"> Thêm</button>
+      <button mat-raised-button color="accent"> Sửa</button>
+      <button mat-raised-button color="accent" (click)="deleteProduct(product.id)"> Xóa</button>
+    </mat-card-actions>
+    </mat-card>
+</div>

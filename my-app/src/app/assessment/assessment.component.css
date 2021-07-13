@@ -1,0 +1,25 @@
+/* .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  } */
+  .row-search {
+      margin-left: 20px;
+  }
+
+  table {
+    width: 100%;
+  }
+  .btn-approve {
+      float: right;
+      margin-right: 2em;
+      margin-bottom:1em;
+  }
+ .select-assessment {
+     width: 60%;
+     margin-left: 10px;
+ }
+ .input-search {
+     margin-left: 10px;
+     width: 60%;
+ }
